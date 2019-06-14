@@ -8,7 +8,10 @@ $(function() {
     event.preventDefault();
 
     var userInput = $("#numInput").val();
-    console.log(userInput);
+
+
+
+    $(".outputNum").text(userInput);
   });
 
 });
