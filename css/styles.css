@@ -1,0 +1,9 @@
+h1 {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+}
+
+.btn {
+  background-color: lightblue;
+  border: solid 3px black;
+}
