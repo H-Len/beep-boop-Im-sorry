@@ -37,13 +37,8 @@ _internet is required to run this app_
 
 ## Link to GitHub Pages
 
-_The link for your gh-pages sites will_
-_always be formatted like this: _
-
-_submissions are: yourusername.github.io/yourprojectname_
-
-_link on GitHub page is:_
-[whatever you want to display](https://github.com/H-Len/study-guide.git)
+_Link to GitHub repo:_
+[beep-boop-Im-sorry](https://github.com/H-Len/beep-boop-Im-sorry.git)
 
 
 ### License
