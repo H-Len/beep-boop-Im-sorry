@@ -1,46 +1,50 @@
 //business logic
 
 
-
-//function to find the sum of all numbers between 0 to userInput
-// function numSum(userInput){
-//     var inputSum = 0;
-//       for(var i = 0; i <= userInput; i++){
-//         inputSum += i;
-//          }
-//     console.log(inputSum)
-//          }
-
 //function for userName to address userName
-function aName(userInput){
+function aName(nameInput){
     var yourName = $("#nameInput").val();
 
     $(".outputNum").text(nameInput);
 }
 
-//mutating numSum function to display each num in console, instead of add all num
-function allNum(userInput){
-    var numArray = [];
-    var inputNum = 0;
-    for(var i = 0; i <= userInput; i++){
-      inputNum = i;
-      console.log(inputNum);
-      numArray.push(" " + inputNum);
-      console.log(numArray);
-    }
-
-    $(".outputNum").text(numArray);
+//adding exceptions
+function beepExceptions(i) {
+  var inputNum = i;
+  if(inputNum === 3) {
+    inputNum = "I'm sorry, Dave. I'm afraid I can't do that.";
+  } else if(inputNum === 2) {
+    inputNum = "Boop!";
+  } else if (inputNum === 1) {
+    inputNum = "Beep!";
+  } else {
+    inputNum = inputNum;
+  }
 }
 
-// var userInput = parseInt(userInput);
-// function numList(userInput) {
-//   console.log(userInput);
-//   var outputArray = [];
-//   for(var i = 0; i <= userInput; i++){
-//     var allNum = outputArray.push[i];
-//   }
-//   console.log(outputArray);
-// }
+//function to display each num individually
+function allNum(userInput){
+  var numArray = [];
+  var inputNum = 0;
+  for(var i = 0; i <= userInput; i++){
+    inputNum = i;
+    console.log(i);
+    inputNum = beepExceptions(i);
+    numArray.push(" " + inputNum);
+    console.log(numArray);
+  }
+  numArray.forEach(function() {
+
+  });
+  $(".outputNum").text(numArray);
+}
+
+
+
+
+
+
+
 
 
 //UI logic
@@ -60,7 +64,7 @@ $(function() {
     event.preventDefault();
     var userInput = $("#numInput").val();
     var userOutput = allNum(userInput);
-    allNum(userInput);
+    beepExceptions(userOutput);
 
   });
 });
