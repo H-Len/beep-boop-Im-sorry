@@ -1,5 +1,7 @@
 //business logic
 
+
+
 //function to find the sum of all numbers between 0 to userInput
 // function numSum(userInput){
 //     var inputSum = 0;
@@ -8,6 +10,13 @@
 //          }
 //     console.log(inputSum)
 //          }
+
+//function for userName to address userName
+function aName(userInput){
+    var yourName = $("#nameInput").val();
+
+    $(".outputNum").text(nameInput);
+}
 
 //mutating numSum function to display each num in console, instead of add all num
 function allNum(userInput){
@@ -37,14 +46,21 @@ function allNum(userInput){
 //UI logic
 
 $(function() {
+  $("#nameForm").submit(function(event) {
+    event.preventDefault();
+    var userName = $("#nameInput").val();
+    console.log(userName);
+    $("#nameForm").hide();
+    $("#greetUser").show();
+    $(".name").text(userName);
+
+  });
+
   $("#numForm").submit(function(event) {
     event.preventDefault();
-
     var userInput = $("#numInput").val();
     var userOutput = allNum(userInput);
     allNum(userInput);
 
-
   });
-
 });

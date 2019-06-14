@@ -12,6 +12,15 @@ h1 {
   text-decoration-style: wavy;
 }
 
+#nameInput {
+  margin: 15px;
+}
+
+.nameBtn {
+  background-color: lightblue;
+  border: solid 3px black;
+}
+
 .btn {
   background-color: lightblue;
   border: solid 3px black;

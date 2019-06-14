@@ -15,6 +15,16 @@
         <h1>Good morning!</h1>
       </div>
 
+      <form id="nameForm" action="index.html" method="post">
+        <div class="inputHolder">
+          <label for="nameInput">Who is submitting the number? I don't like things so impersonal. <br>
+           Name, please.</label>
+          <input id="nameInput" type="text" name="nameInput">
+          <button class="nameBtn" type="submit" name="nameButton">Nice to meet you!</button>
+        </div>
+      </form>
+      <div class="greetUser">It's a pleasure to meet you <span class="name"></span></div>
+
       <form id="numForm" action="index.html" method="post">
         <div class="inputHolder">
           <label for="numInput">Input a positive number</label>
