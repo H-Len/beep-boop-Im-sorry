@@ -9,11 +9,22 @@
     <title>beep-boop-Im-sorry</title>
   </head>
   <body>
-    <h1>Good morning!</h1>
+    <div class="container">
 
+      <h1>Good morning!</h1>
 
+      <form id="numForm" action="index.html" method="post">
+        <div class="inputHolder">
+          <label for="numInput">Input a positive number</label>
+          <input id="numInput" type="number" name="numInput" min="0">
 
+          <button class="btn" type="submit" name="button">Submit!</button>
+        </div>
+      </form>
 
+      <div class="outputNum"></div>
+
+    </div>
 
   </body>
 </html>
