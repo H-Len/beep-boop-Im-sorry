@@ -11,13 +11,13 @@ function aName(nameInput){
 //adding exceptions
 function beepExceptions(i) {
   var inputNum = i;
+  var userName = $("#nameInput").val();
   if(inputNum === 3) {
-    inputNum = "I'm sorry, Dave. I'm afraid I can't do that.";
+    inputNum = "I'm sorry, " + userName + ". I'm afraid I can't do that.";
     numArray.push(" " + inputNum);
   } else if(inputNum === 2) {
     inputNum = "Boop!";
     numArray.push(" " + inputNum);
-    console.log(inputNum);
   } else if (inputNum === 1) {
     inputNum = "Beep!";
     numArray.push(" " + inputNum);
@@ -25,7 +25,6 @@ function beepExceptions(i) {
     inputNum = inputNum;
     numArray.push(" " + inputNum);
   }
-  console.log(numArray);
 }
 
 //function to display each num individually
@@ -45,7 +44,7 @@ function allNum(userInput){
 }
 
 
-
+//function to check individual values in number
 
 
 
@@ -60,16 +59,38 @@ $(function() {
     var userName = $("#nameInput").val();
     console.log(userName);
     $("#nameForm").hide();
-    $("#greetUser").show();
+    $(".greetUser").show();
     $(".name").text(userName);
 
   });
 
   $("#numForm").submit(function(event) {
     event.preventDefault();
+    // $("#numForm").reset();
     var userInput = $("#numInput").val();
     var userOutput = allNum(userInput);
     beepExceptions(userOutput);
-
   });
+
 });
+
+
+
+
+
+
+
+
+// var numDigits = numInput.split("");
+// console.log(numDigits);
+// numDigits.forEach(function(digit) {
+//   if(digit === 3) {
+//     inputNum = 3;
+//   } else if(digit === 2) {
+//     inputNum = 2;
+//   } else if (digit === 1) {
+//     inputNum = 1;
+//   } else {
+//     digit = digit;
+//   }
+// });
