@@ -20,8 +20,7 @@ The exceptions returned have an order of priority, which is in descending order.
 | form to submit number | type in number | number is recorded from user |
 | display user's number | user enters number | variable with number will be displayed on page |
 | display counting up to number| user enters '2'| "0, 1, 2" will be displayed on the screen in a results section |
-| enter user's name | user enters their name | name is prepended to result response |
-| display number after addressing user (name) | user enters a number | ascending numbers display after or appended to address of user |
+| enter user's name | user enters their name | name is used in result response |
 | exception to '1' | user enters number | any number in the series containing a '1' will display the exception for '1's |
 | exception to '2' and '3'| user enters number | exceptions for '2' and '3' in the list will display |
 | indices of multi-digit numbers are evaluated | user enters number more than single digit | 3 > 2 > 1 when it comes to which exception takes priority
