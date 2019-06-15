@@ -1,17 +1,28 @@
 //business logic
 
+// var hotKeys = ['1', '2', '3'];
+// var exceptions = ["Beep!", "Boop!", "I'm sorry, " + userName + ". I'm afraid I can't do that."];
+//
+// var output = function(userInput) {
+//   var exceptionOutput = "";
+//   for (var i = hotKeys.length-1; i >= 0; i--) {
+//     while (userInput >= hotKeys[i]) {
+//       console.log(userInput);
+//       exceptionOutput += exceptions[i];
+//       console.log(exceptionOutput);
+//       userInput -= hotKeys[i];
+//       console.log(userInput);
+//     }
+//   }
+//   return exceptionOutput;
+// }
 
-//function for userName to address userName
-function aName(nameInput){
-    var yourName = $("#nameInput").val();
-
-    $(".outputNum").text(nameInput);
-}
 
 //adding exceptions
 function beepExceptions(i) {
   var inputNum = i;
   var userName = $("#nameInput").val();
+  multiDigit({userInput});
   if(inputNum === 3) {
     inputNum = "I'm sorry, " + userName + ". I'm afraid I can't do that.";
     numArray.push(" " + inputNum);
@@ -27,24 +38,45 @@ function beepExceptions(i) {
   }
 }
 
-//function to display each num individually
-var numArray = [];
-function allNum(userInput){
-  var inputNum = 0;
-  for(var i = 0; i <= userInput; i++){
-    inputNum = i;
-    // numArray.push(" " + i);
-    inputNum = beepExceptions(i);
-    console.log(numArray);
+// //function to check individual values in number
+// //also needs to check to see if an exception is greater than the last exception digit found
+function multiDigit(numInput) {
+  var inputDigit = numInput.toString();
+  var eachDigit = inputDigit.split("");
+
+  //function to display each num individually
+  var numArray = [];
+  function allNum(userInput){
+    var inputNum = 0;
+    for(var i = 0; i <= userInput; i++){
+      inputNum = i;
+      inputNum = beepExceptions(i);
+      console.log(numArray);
+    }
+    numArray.forEach(function() {
+
+    });
+    $(".outputNum").text(numArray);
   }
-  numArray.forEach(function() {
+
+  eachDigit.forEach(function(digit) {
+    numSleuth = 0;
+    if('3' === digit) {
+      numSleuth = 3;
+      //breakout of loop: it's 3
+      return numSleuth;
+    } else if ('2' === digit && 2 > numSleuth) {
+      numSleuth = 2;
+
+    } else if ('1' === digit && 1 > numSleuth) {
+      numSleuth = 1;
+    }
+    alert(numSleuth);
 
   });
-  $(".outputNum").text(numArray);
+
+  return numSleuth;
 }
-
-
-//function to check individual values in number
 
 
 
@@ -61,36 +93,18 @@ $(function() {
     $("#nameForm").hide();
     $(".greetUser").show();
     $(".name").text(userName);
-
   });
 
   $("#numForm").submit(function(event) {
     event.preventDefault();
+    // $(".btn").click(function() {
+    //   // $("#numInput").reset();
+    // });
     // $("#numForm").reset();
     var userInput = $("#numInput").val();
+    var results = multiDigit(userInput);
     var userOutput = allNum(userInput);
     beepExceptions(userOutput);
   });
 
 });
-
-
-
-
-
-
-
-
-// var numDigits = numInput.split("");
-// console.log(numDigits);
-// numDigits.forEach(function(digit) {
-//   if(digit === 3) {
-//     inputNum = 3;
-//   } else if(digit === 2) {
-//     inputNum = 2;
-//   } else if (digit === 1) {
-//     inputNum = 1;
-//   } else {
-//     digit = digit;
-//   }
-// });
