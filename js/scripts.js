@@ -5,17 +5,17 @@
 function multiDigit(numInput) {
   var inputDigit = numInput.toString();
   var eachDigit = inputDigit.split("");
+  numSleuth = 0;
 
   eachDigit.forEach(function(digit) {
-    numSleuth = 0;
     if('3' === digit) {
       numSleuth = 3;
       //breakout of loop: it's 3
       return numSleuth;
-    } else if ('2' === digit && 2 > numSleuth) {
+    } else if ('2' === digit && 2 > parseInt(numSleuth)) {
       numSleuth = 2;
 
-    } else if ('1' === digit && 1 > numSleuth) {
+    } else if ('1' === digit && 1 > parseInt(numSleuth)) {
       numSleuth = 1;
     }
 
