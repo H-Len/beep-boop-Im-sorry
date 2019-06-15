@@ -46,8 +46,9 @@ function beepExceptions(i) {
 }
 
   //function to display each num individually
-  var numArray = [];
+  var numArray;
   function allNum(userInput){
+    numArray = [];
     var inputNum = 0;
     for(var i = 0; i <= userInput; i++){
       // inputNum = i;
@@ -57,7 +58,9 @@ function beepExceptions(i) {
     numArray.forEach(function() {
 
     });
+
     $(".outputNum").text(numArray);
+
   }
 
 
